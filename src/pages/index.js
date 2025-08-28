@@ -21,7 +21,7 @@ const IndexPage = () => (
         <Features />
         <ServicesArea />
         <OurFeatures />
-        <TeamStyleTwo />
+        {/* <TeamStyleTwo /> */}
         {/* <FunFactsArea /> */}
         <IndustriesWeServe />
         <Feedback />
