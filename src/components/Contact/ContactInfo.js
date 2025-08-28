@@ -12,8 +12,8 @@ const ContactInfo = () => {
                                 <Icon.Mail />
                             </div>
                             <h3>Mail Here</h3>
-                            <p><a href="mailto:admin@spet.com">admin@spet.com</a></p>
-                            <p><a href="mailto:info@spet.com">info@spet.com</a></p>
+                            <p><a href="mailto:admin@ocep.co.za">admin@ocep.co.za</a></p>
+                            <p><a href="mailto:info@ocep.co.za">info@ocep.co.za</a></p>
                         </div>
                     </div>
 
@@ -23,7 +23,7 @@ const ContactInfo = () => {
                                 <Icon.MapPin />
                             </div>
                             <h3>Visit Here</h3>
-                            <p>27 Division St, New York, NY 10002, United States of America</p>
+                            <p>02 Kadoma Industrial Park, Steelpoort, 1133, Burgersfort, Limpopo</p>
                         </div>
                     </div>
 
@@ -33,8 +33,8 @@ const ContactInfo = () => {
                                 <Icon.Phone />
                             </div>
                             <h3>Call Here</h3>
-                            <p><a href="tel:+1234567890">+123 456 7890</a></p>
-                            <p><a href="tel:+2414524526">+241 452 4526</a></p>
+                            <p><a href="tel:+1234567890">+27 13 065 0452</a></p>
+                            <p><a href="tel:+2414524526">+27 73 835 3191</a></p>
                         </div>
                     </div>
                 </div>

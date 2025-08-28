@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "gatsby";
 import * as Icon from 'react-feather';
 
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/ocepLogo.png'
 import MapImg from '../../assets/images/map.png'
 import Shape1 from '../../assets/images/shape1.png'
 import Shape2 from '../../assets/images/shape2.svg'
@@ -17,7 +17,7 @@ const Footer = () => {
                         <div className="single-footer-widget">
                             <div className="logo">
                                 <Link to="/it-startup">
-                                    <img src={Logo} alt="logo" />
+                                    <img src={Logo} alt="logo" style={{ width: '100px', height: 'auto' }} />
                                 </Link>
                             </div>
                             <p>Oceans Engineering & Projects is a 100% black-owned company delivering high-quality water jetting, plant hire, and labour services across the mining and industrial sectors — with a focus on safety, integrity, and on-time project execution.</p>
@@ -29,7 +29,7 @@ const Footer = () => {
                             <h3>Company</h3>
                             <ul className="list">
                                 <li>
-                                    <Link to="/about-1">
+                                    <Link to="/aboutUs">
                                         About Us
                                     </Link>
                                 </li>

@@ -1,8 +1,8 @@
 import React from 'react'; 
 
-import Author1 from "../../assets/images/author1.jpg";
-import Author2 from "../../assets/images/author2.jpg";
-import Author3 from "../../assets/images/author3.jpg";
+import Author1 from "../../assets/images/Xolile.jpg";
+import Author2 from "../../assets/images/Masame.jpg";
+import Author3 from "../../assets/images/Selomi.jpg";
 
 const Feedback = () => {
     return (

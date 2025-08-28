@@ -1,13 +1,13 @@
 import React from 'react';
 
-import PartnerImg1 from '../../assets/images/partner-img/partner-1.png'
-import PartnerHoverImg1 from '../../assets/images/partner-img/partner-hover1.png'
-import PartnerImg2 from '../../assets/images/partner-img/partner-2.png'
-import PartnerHoverImg2 from '../../assets/images/partner-img/partner-hover2.png'
-import PartnerImg3 from '../../assets/images/partner-img/partner-3.png'
-import PartnerHoverImg3 from '../../assets/images/partner-img/partner-hover3.png'
-import PartnerImg4 from '../../assets/images/partner-img/partner-10.png'
-import PartnerHoverImg4 from '../../assets/images/partner-img/partner-hover10.png'
+import PartnerImg1 from '../../assets/images/partner-img/afarak@2x.png'
+import PartnerHoverImg1 from '../../assets/images/partner-img/afarak@2x.png'
+import PartnerImg2 from '../../assets/images/partner-img/Bokoni_Platinum Mines_Logo_White.png'
+import PartnerHoverImg2 from '../../assets/images/partner-img/Bokoni_Platinum Mines_Logo_White.png'
+import PartnerImg3 from '../../assets/images/partner-img/samancor.png'
+import PartnerHoverImg3 from '../../assets/images/partner-img/samancor.png'
+import PartnerImg4 from '../../assets/images/partner-img/bcm-logo-ws.png'
+import PartnerHoverImg4 from '../../assets/images/partner-img/bcm-logo-ws.png'
 import PartnerImg5 from '../../assets/images/partner-img/partner-5.png'
 import PartnerHoverImg5 from '../../assets/images/partner-img/partner-hover5.png'
 import PartnerImg6 from '../../assets/images/partner-img/partner-6.png'
@@ -80,26 +80,7 @@ const PartnerStyleTwo = () => {
                         </a>
                     </div>
             
-                    <div className="single-repair-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={PartnerImg5} alt="image" />
-                            <img src={PartnerHoverImg5} alt="image" />
-                        </a>
-                    </div>
-        
-                    <div className="single-repair-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={PartnerImg6} alt="image" />
-                            <img src={PartnerHoverImg6} alt="image" />
-                        </a>
-                    </div>
-        
-                    <div className="single-repair-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={PartnerImg7} alt="image" />
-                            <img src={PartnerHoverImg7} alt="image" />
-                        </a>
-                    </div>
+                    
                 </OwlCarousel> : ''}
             </div>
         </div>

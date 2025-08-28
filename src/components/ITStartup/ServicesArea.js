@@ -1,38 +1,21 @@
-import React from "react"
-import * as Icon from "react-feather"
+import React from "react";
+import * as Icon from "react-feather";
 
-//  Services Images
-import BookSelf from "../../assets/images/services-right-image/book-self.png"
-import Box from "../../assets/images/services-right-image/box.png"
-import Chair from "../../assets/images/services-right-image/chair.png"
-import Cloud from "../../assets/images/services-right-image/cloud.png"
-import Cup from "../../assets/images/services-right-image/cup.png"
-import FlowerTop from "../../assets/images/services-right-image/flower-top.png"
-import HeadPhone from "../../assets/images/services-right-image/head-phone.png"
-import Monitor from "../../assets/images/services-right-image/monitor.png"
-import Mug from "../../assets/images/services-right-image/mug.png"
-import Table from "../../assets/images/services-right-image/table.png"
-import Tissue from "../../assets/images/services-right-image/tissue.png"
-import WaterBottle from "../../assets/images/services-right-image/water-bottle.png"
-import Wifi from "../../assets/images/services-right-image/wifi.png"
-import CercleShape from "../../assets/images/services-right-image/cercle-shape.png"
-import ServiceRightMainPic from "../../assets/images/services-right-image/Steel-commissioning.jpg"
-
-// Design & Development Images
-import BigMonitor from "../../assets/images/services-left-image/big-monitor.png"
-import Creative from "../../assets/images/services-left-image/creative.png"
-import Developer from "../../assets/images/services-left-image/developer.png"
-import SmallMonitor from "../../assets/images/services-left-image/small-monitor.png"
-import SmallTop from "../../assets/images/services-left-image/small-top.png"
-import Target from "../../assets/images/services-left-image/target.png"
-import ServiceLeftMainPic from "../../assets/images/services-left-image/service-left-main-pic.png"
+// Images
+import CercleShape from "../../assets/images/services-right-image/cercle-shape.png";
+import ServiceRightMainPic from "../../assets/images/services-right-image/Steel-commissioning.jpg";
+import Wifi from '../../assets/images/services-right-image/wifi.png';
+import ServiceLeftMainPic from "../../assets/images/services-left-image/Cleaning.jpg";
 
 const ServicesArea = () => {
   return (
     <>
+      {/* Section 1: Engineering & Technical Services */}
       <div className="services-area ptb-80 bg-f7fafd">
         <div className="container">
           <div className="row justify-content-center align-items-center">
+
+            {/* Content */}
             <div className="col-lg-6 col-md-12 services-content">
               <div className="section-title">
                 <h2>Engineering & Technical Services</h2>
@@ -45,135 +28,31 @@ const ServicesArea = () => {
               </div>
 
               <div className="row">
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Settings /> Plant Commissioning
+                {/* Boxes */}
+                {[
+                  { icon: <Icon.Settings />, text: "Plant Commissioning" },
+                  { icon: <Icon.Tool />, text: "Plant Maintenance During Shutdowns" },
+                  { icon: <Icon.User />, text: "Labour Hire of Qualified Artisans" },
+                  { icon: <Icon.Edit3 />, text: "Drawing & Design Services" },
+                  { icon: <Icon.Droplet />, text: "Underground De-Watering" },
+                  { icon: <Icon.Hexagon />, text: "Structural Installations & Steel Works" },
+                  { icon: <Icon.RefreshCw />, text: "Pump Refurbishment (Onsite & Offsite)" },
+                  { icon: <Icon.Activity />, text: "Project Execution & Site Management" },
+                ].map((item, index) => (
+                  <div className="col-lg-6 col-md-6" key={index}>
+                    <div className="box">{item.icon} {item.text}</div>
                   </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Tool /> Plant Maintenance During Shutdowns
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.User /> Labour Hire of Qualified Artisans
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Edit3 /> Drawing & Design Services
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Droplet /> Underground De-Watering
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Hexagon /> Structural Installations & Steel Works
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.RefreshCw /> Pump Refurbishment (Onsite & Offsite)
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Activity /> Project Execution & Site Management
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
+            {/* Right Image Section */}
             <div className="col-lg-6 col-md-12 services-right-image">
               <img
-                src={BookSelf}
-                className="animate__animated animate__fadeInDown animate__delay-0.2s"
-                alt="book-self"
-              />
-
-              <img
-                src={Box}
+                src={ServiceRightMainPic}
                 className="animate__animated animate__fadeInUp animate__delay-0.2s"
-                data-wow-delay="0.6s"
-                alt="box"
-              />
-
-              <img
-                src={Chair}
-                className="animate__animated animate__fadeInLeft animate__delay-0.2s"
-                alt="chair"
-              />
-
-              <img
-                src={Cloud}
-                className="animate__animated animate__zoomIn animate__delay-0.2s"
-                alt="cloud"
-              />
-
-              <img
-                src={Cup}
-                className="animate__animated animate__bounceIn animate__delay-0.2s"
-                alt="cup"
-              />
-
-              <img
-                src={FlowerTop}
-                className="animate__animated animate__fadeInDown animate__delay-0.2s"
-                alt="flower"
-              />
-
-              <img
-                src={HeadPhone}
-                className="animate__animated animate__zoomIn animate__delay-0.2s"
-                alt="head-phone"
-              />
-
-              <img
-                src={Monitor}
-                className="animate__animated animate__fadeInUp animate__delay-0.2s"
-                alt="monitor"
-              />
-
-              <img
-                src={Mug}
-                className="animate__animated animate__rotateIn animate__delay-0.2s"
-                alt="mug"
-              />
-
-              <img
-                src={Table}
-                className="animate__animated animate__fadeInUp animate__delay-0.2s"
-                alt="table"
-              />
-
-              <img
-                src={Tissue}
-                className="animate__animated animate__zoomIn animate__delay-0.2s"
-                alt="tissue"
-              />
-
-              <img
-                src={WaterBottle}
-                className="animate__animated animate__fadeInUp animate__delay-0.2s"
-                alt="water-bottle"
-              />
-
-              <img
-                src={Wifi}
-                className="animate__animated animate__fadeInLeft animate__delay-0.2s"
-                data-wow-delay="0.6s"
-                alt="wifi"
+                alt="main-pic"
+                style={{ borderRadius: "50px" }}
               />
 
               <img
@@ -183,108 +62,37 @@ const ServicesArea = () => {
               />
 
               <img
-                src={ServiceRightMainPic}
-                className="animate__animated animate__fadeInUp animate__delay-0.2s"
-                alt="main-pic"
+                src={Wifi}
+                className="animate__animated animate__fadeInLeft animate__delay-0.2s"
+                alt="wifi"
               />
             </div>
           </div>
         </div>
       </div>
 
+      {/* Section 2: Services We've Rendered */}
       <div className="services-area ptb-80">
         <div className="container">
           <div className="row h-100 justify-content-center align-items-center">
-            {/* <div className="col-lg-6 col-md-12 services-left-image">
-                            <img 
-                                src={BigMonitor}
-                                className="animate__animated animate__fadeInDown animate__delay-0.2s" 
-                                alt="big-monitor"
-                            />
-            
-                            <img 
-                                src={Creative}
-                                className="animate__animated animate__fadeInUp animate__delay-0.2s" 
-                                alt="creative"
-                            />
-    
-                            <img 
-                                src={Developer}
-                                className="animate__animated animate__fadeInLeft animate__delay-0.2s" 
-                                alt="developer"
-                            />
-                    
-                            <img 
-                                src={FlowerTop}
-                                className="animate__animated animate__fadeInLeft animate__delay-0.2s" 
-                                data-wow-delay="0.6s" 
-                                alt="flower-top"
-                            />
-        
-                            <img 
-                                src={SmallMonitor}
-                                className="animate__animated animate__bounceIn animate__delay-0.2s" 
-                                alt="small-monitor"
-                            />
-                        
-                            <img 
-                                src={SmallTop}
-                                className="animate__animated animate__fadeInDown animate__delay-0.2s" 
-                                alt="small-top"
-                            />
-                
-                            <img 
-                                src={Table}
-                                className="animate__animated animate__zoomIn animate__delay-0.2s" 
-                                alt="table"
-                            />
-            
-                            <img 
-                                src={Target}
-                                className="animate__animated animate__fadeInUp animate__delay-0.2s" 
-                                alt="target"
-                            />
-                        
-                            <img 
-                                src={CercleShape}
-                                className="bg-image rotateme" 
-                                alt="shape"
-                            />
-           
-                            <img 
-                                src={ServiceLeftMainPic}
-                                className="animate__animated animate__fadeInUp animate__delay-0.2s" 
-                                alt="main-pic"
-                            />
-                        </div> */}
+
+            {/* Left Image Section (Fixed) */}
             <div className="col-lg-6 col-md-12 services-left-image">
-              {/* Main Image */}
               <img
                 src={ServiceLeftMainPic}
                 className="animate__animated animate__fadeInUp animate__delay-0.2s"
                 alt="main-service-image"
+                style={{ borderRadius: "50px" }}
               />
 
-              {/* Decorative / Animated Elements */}
               <img
                 src={CercleShape}
                 className="bg-image rotateme"
                 alt="circle-shape"
               />
-
-              <img
-                src={FlowerTop}
-                className="animate__animated animate__fadeInLeft animate__delay-0.4s"
-                alt="flower-top"
-              />
-
-              <img
-                src={Target}
-                className="animate__animated animate__fadeInUp animate__delay-0.6s"
-                alt="target-icon"
-              />
             </div>
 
+            {/* Right Text Content */}
             <div className="col-lg-6 col-md-12 services-content">
               <div className="section-title">
                 <h2>Services We’ve Rendered</h2>
@@ -298,61 +106,30 @@ const ServicesArea = () => {
               </div>
 
               <div className="row">
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Tool /> Plant Commissioning (Mechanical, Electrical &
-                    Instrumentation)
+                {/* Render Service Boxes */}
+                {[
+                  "Plant Commissioning (Mechanical, Electrical & Instrumentation)",
+                  "Plant Maintenance During Shutdowns",
+                  "Labour Hire of Qualified Artisans",
+                  "Underground De-Watering",
+                  "Structural Installations & Steel Works",
+                  "Pump Refurbishment (Onsite & Offsite)",
+                  "Project Execution & Site Management",
+                  "Workforce Training & Skills Development",
+                ].map((text, index) => (
+                  <div className="col-lg-6 col-md-6" key={index}>
+                    <div className="box">
+                      {React.createElement(Icon[Object.keys(Icon)[index % Object.keys(Icon).length]])} {text}
+                    </div>
                   </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Settings /> Plant Maintenance During Shutdowns
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.User /> Labour Hire of Qualified Artisans
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Droplet /> Underground De-Watering
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Hexagon /> Structural Installations & Steel Works
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.RefreshCw /> Pump Refurbishment (Onsite & Offsite)
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.BookOpen /> Project Execution & Site Management
-                  </div>
-                </div>
-
-                <div className="col-lg-6 col-md-6">
-                  <div className="box">
-                    <Icon.Activity /> Workforce Training & Skills Development
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ServicesArea
+export default ServicesArea;
