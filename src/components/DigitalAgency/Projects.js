@@ -13,43 +13,13 @@ import Shape2 from "../../assets/images/shape2.svg";
 import Shape3 from "../../assets/images/shape3.svg";
 import Shape4 from "../../assets/images/shape4.svg";
 
-import Loadable from '@loadable/component';
-const OwlCarousel = Loadable(() => import('react-owl-carousel3'));
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 
-const options = {
-    loop: true,
-    nav: false,
-    dots: true,
-    autoplay: true,
-    smartSpeed: 1000,
-    margin: 30,
-    autoplayTimeout: 5000,
-    responsive: {
-        0:{
-            items: 1,
-        },
-        576:{
-            items: 2,
-        },
-        768:{
-            items: 2,
-        },
-        1024:{
-            items: 3,
-        },
-        1200:{
-            items: 4,
-        }
-    },
-}
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Projects = () => {
-    const [display, setDisplay] = React.useState(false);
-
-    React.useEffect(() => {
-        setDisplay(true);
-    }, [])
-    
     return (
         <div className="ml-projects-area pt-0 ptb-80">
             <div className="container">
@@ -61,55 +31,34 @@ const Projects = () => {
             </div>
 
             <div className="container-fluid">
-                {display ? <OwlCarousel 
-                    className="ml-projects-slides owl-carousel owl-theme"
-                    {...options}
-                >  
-                    <div className="single-ml-projects-box">
-                        <img src={ProjectsImg1} alt="image" />
-                        <div className="plus-icon">
-                            <Link to="/project-details">
-                                <span></span>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="single-ml-projects-box">
-                        <img src={ProjectsImg2} alt="image" />
-                        <div className="plus-icon">
-                            <Link to="/project-details">
-                                <span></span>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="single-ml-projects-box">
-                        <img src={ProjectsImg3} alt="image" />
-                        <div className="plus-icon">
-                            <Link to="/project-details">
-                                <span></span>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="single-ml-projects-box">
-                        <img src={ProjectsImg4} alt="image" />
-                        <div className="plus-icon">
-                            <Link to="/project-details">
-                                <span></span>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="single-ml-projects-box">
-                        <img src={ProjectsImg5} alt="image" />
-                        <div className="plus-icon">
-                            <Link to="/project-details">
-                                <span></span>
-                            </Link>
-                        </div>
-                    </div>
-                </OwlCarousel> : ''}
+                <Swiper
+                    modules={[Autoplay, Pagination]}
+                    spaceBetween={30}
+                    loop={true}
+                    autoplay={{ delay: 5000, disableOnInteraction: false }}
+                    pagination={{ clickable: true }}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },
+                        576: { slidesPerView: 2 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                        1200: { slidesPerView: 4 }
+                    }}
+                    className="ml-projects-slides"
+                >
+                    {[ProjectsImg1, ProjectsImg2, ProjectsImg3, ProjectsImg4, ProjectsImg5].map((img, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="single-ml-projects-box">
+                                <img src={img} alt={`Project ${index + 1}`} />
+                                <div className="plus-icon">
+                                    <Link to="/project-details">
+                                        <span></span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
 
             {/* Shape Images */}
@@ -133,6 +82,6 @@ const Projects = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Projects;

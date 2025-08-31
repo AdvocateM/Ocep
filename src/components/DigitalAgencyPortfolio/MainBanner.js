@@ -1,38 +1,28 @@
 import React from 'react';
 import { Link } from "gatsby";
 
-import Loadable from '@loadable/component';
-const OwlCarousel = Loadable(() => import('react-owl-carousel3'));
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, EffectFade } from 'swiper/modules';
 
-const options = {
-    loop: true,
-    nav: true,
-    smartSpeed: 1000,
-    autoplayTimeout: 5000,
-    dots: false,
-    animateOut: 'fadeOut',
-    autoplayHoverPause: true,
-    autoplay: true,
-    items: 1,
-    navText: [
-        "<i class='bx bx-chevron-left'></i>",
-        "<i class='bx bx-chevron-right'></i>"
-    ]
-};
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 
 const MainBanner = () => {
-    const [display, setDisplay] = React.useState(false);
-
-    React.useEffect(() => {
-        setDisplay(true);
-    }, [])
-
     return (
-        <>
-            {display ? <OwlCarousel 
-                className="agency-portfolio-home-slides owl-carousel owl-theme"
-                {...options}
-            > 
+        <Swiper
+            modules={[Autoplay, Navigation, EffectFade]}
+            loop={true}
+            autoplay={{ delay: 5000, disableOnInteraction: true }}
+            navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }}
+            effect="fade"
+            speed={1000}
+            className="agency-portfolio-home-slides"
+        >
+            <SwiperSlide>
                 <div className="agency-portfolio-main-banner portfolio-banner-bg1">
                     <div className="d-table">
                         <div className="d-table-cell">
@@ -47,7 +37,9 @@ const MainBanner = () => {
                         </div>
                     </div>
                 </div>
+            </SwiperSlide>
 
+            <SwiperSlide>
                 <div className="agency-portfolio-main-banner portfolio-banner-bg2">
                     <div className="d-table">
                         <div className="d-table-cell">
@@ -62,7 +54,9 @@ const MainBanner = () => {
                         </div>
                     </div>
                 </div>
+            </SwiperSlide>
 
+            <SwiperSlide>
                 <div className="agency-portfolio-main-banner portfolio-banner-bg3">
                     <div className="d-table">
                         <div className="d-table-cell">
@@ -77,9 +71,13 @@ const MainBanner = () => {
                         </div>
                     </div>
                 </div>
-            </OwlCarousel> : ''}
-        </>
+            </SwiperSlide>
+
+            {/* Navigation buttons */}
+            <div className="swiper-button-prev"><i className='bx bx-chevron-left'></i></div>
+            <div className="swiper-button-next"><i className='bx bx-chevron-right'></i></div>
+        </Swiper>
     )
 }
 
-export default MainBanner;  
+export default MainBanner;

@@ -1,63 +1,54 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+
+import SwiperCore from 'swiper';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 import ShopImage1 from "../../assets/images/shop-image/shop-image1.jpg";
 import ShopImage2 from "../../assets/images/shop-image/shop-image2.jpg";
 import ShopImage3 from "../../assets/images/shop-image/shop-image3.jpg";
 import ShopImage4 from "../../assets/images/shop-image/shop-image4.jpg";
-import ShopImage5 from "../../assets/images/shop-image/shop-image5.jpg"; 
+import ShopImage5 from "../../assets/images/shop-image/shop-image5.jpg";
 
-import Loadable from '@loadable/component';
-const OwlCarousel = Loadable(() => import('react-owl-carousel3'));
-
-const options = {
-    loop: true,
-    nav: true,
-    dots: false,
-    autoplay: true,
-    items: 1,
-    smartSpeed: 1000,
-    autoplayTimeout: 5000,
-    navText: [
-        "<i class='bx bx-chevron-left'></i>",
-        "<i class='bx bx-chevron-right'></i>"
-    ],
-};
+SwiperCore.use([Navigation, Autoplay]);
 
 const ProductSlider = () => {
-    const [display, setDisplay] = React.useState(false);
-
-    React.useEffect(() => {
-        setDisplay(true);
-    }, [])
+    const images = [ShopImage1, ShopImage2, ShopImage3, ShopImage4, ShopImage5];
 
     return (
-        <>
-            {display ? <OwlCarousel 
-                className="products-details-image products-details-image-slides owl-carousel owl-theme"
-                {...options}
-            >  
-                <div className="single-image-box">
-                    <img src={ShopImage1} alt="img" />
-                </div>
+        <Swiper
+            className="products-details-image products-details-image-slides"
+            navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }}
+            autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+            }}
+            speed={1000}
+            loop={true}
+            slidesPerView={1}
+        >
+            {images.map((img, index) => (
+                <SwiperSlide key={index}>
+                    <div className="single-image-box">
+                        <img src={img} alt={`Product ${index + 1}`} />
+                    </div>
+                </SwiperSlide>
+            ))}
 
-                <div className="single-image-box">
-                    <img src={ShopImage2} alt="img" />
-                </div>
-                
-                <div className="single-image-box">
-                    <img src={ShopImage3} alt="img" />
-                </div>
-                
-                <div className="single-image-box">
-                    <img src={ShopImage4} alt="img" />
-                </div>
-                
-                <div className="single-image-box">
-                    <img src={ShopImage5} alt="img" />
-                </div>
-            </OwlCarousel> : ''}
-        </>
-    )
-}
+            <div className="swiper-button-prev">
+                <i className="bx bx-chevron-left"></i>
+            </div>
+            <div className="swiper-button-next">
+                <i className="bx bx-chevron-right"></i>
+            </div>
+        </Swiper>
+    );
+};
 
-export default ProductSlider;  
+export default ProductSlider;

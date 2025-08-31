@@ -1,4 +1,11 @@
-import React from 'react'; 
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/free-mode';
+
+import SwiperCore from 'swiper';
+import { Autoplay, FreeMode } from 'swiper/modules';
 
 import APPartner1 from "../../assets/images/agency-portfolio-partner-image/ap-partner1.png";
 import APPartner2 from "../../assets/images/agency-portfolio-partner-image/ap-partner2.png";
@@ -7,80 +14,53 @@ import APPartner4 from "../../assets/images/agency-portfolio-partner-image/ap-pa
 import APPartner5 from "../../assets/images/agency-portfolio-partner-image/ap-partner5.png";
 import APPartner6 from "../../assets/images/agency-portfolio-partner-image/ap-partner6.png";
 
-import Loadable from '@loadable/component';
-const OwlCarousel = Loadable(() => import('react-owl-carousel3'));
-
-const options = {
-    loop: true,
-    nav: false,
-    dots: false,
-    autoplayHoverPause: true,
-    autoplay: true,
-    margin: 30,
-    responsive: {
-        0: {
-            items: 2,
-        },
-        576: {
-            items: 4,
-        },
-        768: {
-            items: 4,
-        },
-        992: {
-            items: 6,
-        }
-    }
-};
+SwiperCore.use([Autoplay, FreeMode]);
 
 const Partner = () => {
-    const [display, setDisplay] = React.useState(false);
-
-    React.useEffect(() => {
-        setDisplay(true);
-    }, [])
-
     return (
         <div className="agency-portfolio-partner-area ptb-80">
             <div className="container">
-                {display ? <OwlCarousel 
-                    className="agency-portfolio-partner-slides owl-carousel owl-theme"
-                    {...options}
-                > 
-                    <div className="single-agency-portfolio-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={APPartner1} alt="image" />
-                        </a>
-                    </div>
-                    <div className="single-agency-portfolio-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={APPartner2} alt="image" />
-                        </a>
-                    </div>
-                    <div className="single-agency-portfolio-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={APPartner3} alt="image" />
-                        </a>
-                    </div>
-                    <div className="single-agency-portfolio-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={APPartner4} alt="image" />
-                        </a>
-                    </div>
-                    <div className="single-agency-portfolio-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={APPartner5} alt="image" />
-                        </a>
-                    </div>
-                    <div className="single-agency-portfolio-partner">
-                        <a href="https://themeforest.net/user/envytheme/portfolio" target="_blank" rel="noreferrer">
-                            <img src={APPartner6} alt="image" />
-                        </a>
-                    </div>
-                </OwlCarousel> : ''}
+                <Swiper
+                    className="agency-portfolio-partner-slides"
+                    spaceBetween={30}
+                    freeMode={true}
+                    loop={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 2,
+                        },
+                        576: {
+                            slidesPerView: 4,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                        },
+                        992: {
+                            slidesPerView: 6,
+                        },
+                    }}
+                >
+                    {[APPartner1, APPartner2, APPartner3, APPartner4, APPartner5, APPartner6].map((img, idx) => (
+                        <SwiperSlide key={idx}>
+                            <div className="single-agency-portfolio-partner">
+                                <a
+                                    href="https://themeforest.net/user/envytheme/portfolio"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <img src={img} alt={`Partner ${idx + 1}`} />
+                                </a>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Partner;  
+export default Partner;
