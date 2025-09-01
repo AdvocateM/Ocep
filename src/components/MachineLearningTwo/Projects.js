@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "gatsby";
 
+// Project Images
 import ProjectsImg1 from "../../assets/images/projects-img1.jpg";
 import ProjectsImg2 from "../../assets/images/projects-img2.jpg";
 import ProjectsImg3 from "../../assets/images/projects-img3.jpg";
@@ -13,13 +14,20 @@ import Shape2 from "../../assets/images/shape2.svg";
 import Shape3 from "../../assets/images/shape3.svg";
 import Shape4 from "../../assets/images/shape4.svg";
 
+// Swiper imports for Swiper v11+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 const Projects = () => {
+    const projectImages = [
+        ProjectsImg1,
+        ProjectsImg2,
+        ProjectsImg3,
+        ProjectsImg4,
+        ProjectsImg5
+    ];
+
     return (
         <div className="ml-projects-area pt-0 ptb-80">
             <div className="container">
@@ -47,7 +55,7 @@ const Projects = () => {
                     }}
                     className="ml-projects-slides"
                 >
-                    {[ProjectsImg1, ProjectsImg2, ProjectsImg3, ProjectsImg4, ProjectsImg5].map((img, index) => (
+                    {projectImages.map((img, index) => (
                         <SwiperSlide key={index}>
                             <div className="single-ml-projects-box">
                                 <img src={img} alt={`project-${index + 1}`} />
@@ -62,7 +70,7 @@ const Projects = () => {
                 </Swiper>
             </div>
 
-            {/* Shape Images */}
+            {/* Decorative Shape Images */}
             <div className="shape1">
                 <img src={Shape1} alt="shape" />
             </div>
@@ -83,6 +91,6 @@ const Projects = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Projects;

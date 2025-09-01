@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from "gatsby";
 
+// Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
+// Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay'; // Optional but prevents CSS chunk warnings
 
+// Project Images
 import ProjectsImg1 from "../../assets/images/projects-img1.jpg";
 import ProjectsImg2 from "../../assets/images/projects-img2.jpg";
 import ProjectsImg3 from "../../assets/images/projects-img3.jpg";
@@ -20,6 +24,7 @@ import Shape2 from "../../assets/images/shape2.svg";
 import Shape3 from "../../assets/images/shape3.svg";
 import Shape4 from "../../assets/images/shape4.svg";
 
+// Image data array
 const projects = [
   { img: ProjectsImg1, alt: 'Project 1' },
   { img: ProjectsImg2, alt: 'Project 2' },
@@ -51,18 +56,10 @@ const Projects = () => {
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           breakpoints={{
-            576: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            1200: {
-              slidesPerView: 4,
-            },
+            576: { slidesPerView: 2 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 },
           }}
           className="ml-projects-slides"
         >

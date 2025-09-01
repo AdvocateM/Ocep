@@ -56,7 +56,12 @@ const Partner = () => {
             <SwiperSlide key={index}>
               <div className="single-ml-partner">
                 <a href={href} target="_blank" rel="noreferrer" className="partner-link">
-                  <img src={img} alt={alt} style={{ width: '20px', height: 'auto' }} />
+                  <img
+                    src={img}
+                    alt={alt}
+                    loading="lazy"
+                    className="partner-logo"
+                  />
                 </a>
               </div>
             </SwiperSlide>
@@ -64,7 +69,7 @@ const Partner = () => {
         </Swiper>
       </div>
 
-      {/* Add this style block or add to your CSS file */}
+      {/* Inline style block (optional - move to CSS if needed) */}
       <style>{`
         .single-ml-partner {
           text-align: center;
@@ -72,6 +77,9 @@ const Partner = () => {
         }
         .partner-link img {
           transition: filter 0.3s ease;
+          max-height: 40px;
+          width: auto;
+          display: inline-block;
         }
         .partner-link:hover img {
           filter: brightness(0.8);
